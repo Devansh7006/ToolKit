@@ -1,17 +1,19 @@
 
 # ⚡ Cyber Toolkit
 
-> A modular, GUI-based cybersecurity toolkit for network reconnaissance and analysis.
+> A modular, GUI-based cybersecurity toolkit powered entirely by FastAPI.
 
-
+---
 
 ## 🚀 Overview
 
 Cyber Toolkit is a lightweight yet powerful security tool designed to perform essential reconnaissance tasks through a clean web-based interface.
 
+Unlike traditional setups, this project runs **fully on the backend** — FastAPI serves both the API and the frontend UI.
+
 It combines multiple security utilities into a single dashboard, making it easy to scan networks, discover subdomains, enumerate directories, and download files — all from one place.
 
-
+---
 
 ## 🛠 Features
 
@@ -21,7 +23,7 @@ It combines multiple security utilities into a single dashboard, making it easy 
 
 - 🌐 **Subdomain Enumeration**
   - Brute-force subdomains using wordlists
-  - Multi-threaded for fast execution
+  - Multi-threaded execution
 
 - 📂 **Directory Enumeration**
   - Finds hidden endpoints on websites
@@ -31,75 +33,96 @@ It combines multiple security utilities into a single dashboard, making it easy 
   - Download files directly from URLs
   - Supports multiple file types
 
-- 🎯 **GUI Dashboard**
-  - Clean and modern UI
-  - Tab-based navigation
-  - Real-time results display
+- 🎯 **Integrated Web UI**
+  - Served directly by FastAPI (`/`)
+  - No separate frontend server required
+  - Real-time interaction with backend APIs
 
+---
 
 ## 🧠 Tech Stack
 
 | Layer       | Technology            |
 |------------|----------------------|
 | Backend    | FastAPI (Python)     |
-| Frontend   | HTML, CSS, JavaScript|
+| UI Serving | FastAPI StaticFiles  |
 | Networking | Scapy                |
 | Requests   | Python Requests      |
 
+---
+
+## 📁 Project Structure
+
+
+
+``ToolKit/
+│
+├── backend/
+│   ├── main.py
+│   ├── requirements.txt
+│   ├── wordlist.txt
+│   │
+│   ├── static/              
+│   │   ├── index.html
+│   │   ├── style.css
+│   │   ├── app.js
+│   │
+│   └── modules/
+│       ├── arp.py
+│       ├── subdomain.py
+│       ├── dir_enum.py
+│       ├── downloader.py
+│
+├── screenshots/
+│
+└── README.md``
+
+---
 
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/Devansh7006/ToolKit.git
-cd ToolKit
+cd ToolKit/backend
 ````
 
 ---
 
-### 2️⃣ Setup Backend
+### 2️⃣ Install dependencies
 
 ```bash
-cd backend
 pip install -r requirements.txt
 ```
 
 ---
 
-### 3️⃣ Run Backend Server
+### 3️⃣ Run the server
 
 ```bash
 uvicorn main:app --reload
 ```
 
-Server will run at:
+---
+
+### 4️⃣ Open in browser
 
 ```
 http://127.0.0.1:8000
 ```
 
+✅ UI + API both run from here
+
 ---
 
-### 4️⃣ Run Frontend
+## 🔌 API Endpoints
 
-Open:
+All endpoints are prefixed with `/api`
 
-```
-frontend/index.html
-```
-
-OR (recommended):
-
-```bash
-cd frontend
-python -m http.server 5500
-```
-
-Then open:
-
-```
-http://localhost:5500
-```
+* `/api/arp` → Network scan
+* `/api/subdomain` → Subdomain enumeration
+* `/api/dir` → Directory brute force
+* `/api/download` → File downloader
 
 ---
 
@@ -107,7 +130,7 @@ http://localhost:5500
 
 ### 🖥 ARP Network Scan
 
-![ARP Scan](screenshots/arp.png)
+![ARP](screenshots/arp.png)
 
 ### 🌐 Subdomain Enumeration
 
