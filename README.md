@@ -136,19 +136,22 @@ http://localhost:5500
 
 ## 📸 Screenshots
 
-> Add your screenshots here
+### 🖥 ARP Network Scan
 
-### 🖥 Dashboard
-
-![Dashboard](screenshots/dashboard.png)
+(screenshots/arp.png)
 
 ### 🌐 Subdomain Enumeration
 
-![Subdomain](screenshots/subdomain.png)
+(screenshots/Subdomain.png)
 
-### 📡 ARP Scan
+### 📡 Directory Enumeration
 
-![ARP](screenshots/arp.png)
+(screenshots/Dir_Er.png)
+
+### 📁 File Downloader
+
+(screenshots/download.png)
+
 
 
 ## 🔐 Disclaimer
