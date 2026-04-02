@@ -27,7 +27,7 @@ It combines multiple security utilities into a single dashboard, making it easy 
 ## 🧠 Architecture
 
 
-
+```
 Browser (UI)
 ↓
 FastAPI Server (Backend)
@@ -38,7 +38,7 @@ FastAPI Server (Backend)
 ├── Subdomain Enum
 ├── Directory Enum
 └── Downloader
-
+```
 
 
 ✔ Single server  
@@ -108,7 +108,7 @@ Cyber-toolkit/
 ├── screenshots/
 │   ├── arp.png
 │   ├── Subdomain.png
-│   ├── Dir_Er.png
+│   ├── Dir_En.png
 │   └── download.png
 │
 └── README.md
@@ -182,7 +182,7 @@ All endpoints are prefixed with `/api`
 
 ### 📂 Directory Enumeration
 
-![Directory](screenshots/Dir_Er.png)
+![Directory](screenshots/Dir_En.png)
 
 ---
 
