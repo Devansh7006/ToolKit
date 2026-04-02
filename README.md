@@ -50,34 +50,6 @@ It combines multiple security utilities into a single dashboard, making it easy 
 | Requests   | Python Requests      |
 
 ---
-```
-## 📁 Project Structure
-
-
-
-``ToolKit/
-│
-├── backend/
-│   ├── main.py
-│   ├── requirements.txt
-│   ├── wordlist.txt
-│   │
-│   ├── static/              
-│   │   ├── index.html
-│   │   ├── style.css
-│   │   ├── app.js
-│   │
-│   └── modules/
-│       ├── arp.py
-│       ├── subdomain.py
-│       ├── dir_enum.py
-│       ├── downloader.py
-│
-├── screenshots/
-│
-└── README.md``
-```
----
 
 ## ⚙️ Installation & Setup
 
