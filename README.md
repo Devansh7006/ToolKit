@@ -37,7 +37,6 @@ It combines multiple security utilities into a single dashboard, making it easy 
   - Real-time results display
 
 
-
 ## 🧠 Tech Stack
 
 | Layer       | Technology            |
@@ -47,37 +46,6 @@ It combines multiple security utilities into a single dashboard, making it easy 
 | Networking | Scapy                |
 | Requests   | Python Requests      |
 
-
-```
-## 📁 Project Structure
-
-``
-ToolKit/
-│
-├── backend/
-│   ├── main.py
-│   ├── requirements.txt
-│   ├── wordlist.txt
-│   └── modules/
-│       ├── arp.py
-│       ├── subdomain.py
-│       ├── dir_enum.py
-│       ├── downloader.py
-│
-├── frontend/
-│   ├── index.html
-│   ├── style.css
-│   ├── app.js
-│
-├── screenshots/
-│   ├── arp.png
-│   ├── Subdomain.png
-│   ├── Dir_Er.png
-│   ├── download.png
-│
-└── README.md ``
-
-```
 
 ## ⚙️ Installation & Setup
 
