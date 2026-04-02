@@ -1,4 +1,3 @@
-```md
 # ⚡ Cyber Toolkit
 
 > A modular cybersecurity toolkit for network reconnaissance, featuring an integrated FastAPI-powered web interface.
@@ -27,7 +26,7 @@ It combines multiple security utilities into a single dashboard, making it easy 
 
 ## 🧠 Architecture
 
-```
+
 
 Browser (UI)
 ↓
@@ -40,7 +39,7 @@ FastAPI Server (Backend)
 ├── Directory Enum
 └── Downloader
 
-```
+
 
 ✔ Single server  
 ✔ No frontend deployment needed  
