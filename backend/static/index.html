@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Toolkit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="bg-mesh"></div>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-diamond">
+          <svg width="22" height="22" viewBox="0 0 20 20"><polygon points="10,1 19,10 10,19 1,10" fill="none" stroke="currentColor" stroke-width="1.5"/><polygon points="10,5 15,10 10,15 5,10" fill="currentColor"/></svg>
+        </div>
+        <div>
+          <div class="logo-name">CYBER TOOLKIT</div>
+          <div class="logo-tagline">Security &amp; Recon Suite</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <div class="nav-label">TOOLS</div>
+        <a class="nav-item active" data-tab="arp" onclick="switchTab('arp')">
+          <svg class="ni" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M1 12h4M19 12h4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          <span>ARP Scan</span>
+          <em>NET</em>
+        </a>
+        <a class="nav-item" data-tab="sub" onclick="switchTab('sub')">
+          <svg class="ni" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20"/></svg>
+          <span>Subdomain</span>
+          <em>DNS</em>
+        </a>
+        <a class="nav-item" data-tab="dir" onclick="switchTab('dir')">
+          <svg class="ni" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg>
+          <span>Dir Enum</span>
+          <em>HTTP</em>
+        </a>
+        <a class="nav-item" data-tab="down" onclick="switchTab('down')">
+          <svg class="ni" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Downloader</span>
+          <em>FILE</em>
+        </a>
+      </nav>
+
+      <div class="sidebar-foot">
+        <span class="online-dot"></span>System Online
+        <span style="margin-left:auto;opacity:.4;font-size:11px">v1.0</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div id="page-title" class="page-title">ARP Network Scan</div>
+        <div class="clock-box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><span id="clock"></span></div>
+      </header>
+
+      <!-- ARP -->
+      <section class="panel active" id="tab-arp">
+        <div class="intro"><h1>ARP Network Scan</h1><p>Discover all live hosts on your local network by broadcasting ARP requests. Pick your active interface from the dropdown.</p></div>
+        <div class="card">
+          <div class="card-head">Scan Configuration</div>
+          <div class="form-grid">
+            <div class="field">
+              <label>Network Interface</label>
+              <div class="sel-wrap"><select id="iface"></select><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6,9 12,15 18,9"/></svg></div>
+              <small id="iface-hint">Loading...</small>
+            </div>
+            <div class="field">
+              <label>IP Range (CIDR)</label>
+              <input id="arp-range" class="inp" placeholder="192.168.1.0/24" />
+              <small>Standard /24 covers 254 hosts</small>
+            </div>
+          </div>
+          <div class="card-foot">
+            <button class="btn" onclick="arpScan()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg> Run ARP Scan</button>
+          </div>
+        </div>
+        <div id="arp-msg" class="msg hidden"></div>
+        <div id="arp-out"></div>
+      </section>
+
+      <!-- SUBDOMAIN -->
+      <section class="panel" id="tab-sub">
+        <div class="intro"><h1>Subdomain Enumeration</h1><p>Brute-force subdomains using your wordlist. Runs 50 parallel threads — works fast even with large wordlists.</p></div>
+        <div class="card">
+          <div class="card-head">Target Configuration</div>
+          <div class="form-grid">
+            <div class="field full">
+              <label>Target Domain</label>
+              <input id="sub-domain" class="inp" placeholder="example.com" />
+              <small>Bare domain only — no http://</small>
+            </div>
+          </div>
+          <div class="card-foot">
+            <button class="btn" onclick="subScan()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg> Enumerate</button>
+            <button class="btn ghost" id="sub-stop" onclick="stopScan('sub')" style="display:none">&#9632; Stop</button>
+          </div>
+        </div>
+        <div id="sub-msg" class="msg hidden"></div>
+        <div id="sub-prog" class="prog-box hidden"><div class="prog-bar"><div id="sub-fill" class="prog-fill"></div></div><span id="sub-prog-txt">0 / 0</span></div>
+        <div id="sub-out"></div>
+      </section>
+
+      <!-- DIR ENUM -->
+      <section class="panel" id="tab-dir">
+        <div class="intro"><h1>Directory Enumeration</h1><p>Discover hidden paths and files on a web server. Parallel requests for high-speed scanning.</p></div>
+        <div class="card">
+          <div class="card-head">Target Configuration</div>
+          <div class="form-grid">
+            <div class="field full">
+              <label>Target URL</label>
+              <input id="dir-target" class="inp" placeholder="http://192.168.1.1" />
+              <small>Must include http:// or https://</small>
+            </div>
+          </div>
+          <div class="card-foot">
+            <button class="btn" onclick="dirScan()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg> Start Scan</button>
+            <button class="btn ghost" id="dir-stop" onclick="stopScan('dir')" style="display:none">&#9632; Stop</button>
+          </div>
+        </div>
+        <div id="dir-msg" class="msg hidden"></div>
+        <div id="dir-prog" class="prog-box hidden"><div class="prog-bar"><div id="dir-fill" class="prog-fill"></div></div><span id="dir-prog-txt">0 / 0</span></div>
+        <div id="dir-out"></div>
+      </section>
+
+      <!-- DOWNLOADER -->
+      <section class="panel" id="tab-down">
+        <div class="intro"><h1>File Downloader</h1><p>Fetch any remote file by URL. Files are saved to <code>~/Downloads/CyberToolkit-Downloads/</code> on the server machine.</p></div>
+        <div class="card">
+          <div class="card-head">Download Configuration</div>
+          <div class="form-grid">
+            <div class="field full">
+              <label>File URL</label>
+              <input id="dl-url" class="inp" placeholder="https://example.com/report.pdf" />
+            </div>
+            <div class="field full">
+              <label>Save As (filename with extension)</label>
+              <input id="dl-name" class="inp" placeholder="report.pdf" />
+              <small>Saved to: ~/Downloads/CyberToolkit-Downloads/</small>
+            </div>
+          </div>
+          <div class="card-foot">
+            <button class="btn" onclick="downloadFile()"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download File</button>
+          </div>
+        </div>
+        <div id="dl-msg" class="msg hidden"></div>
+        <div id="dl-out"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <div id="spinner" class="spinner-ov hidden">
+    <div class="spinner-inner"><div class="spin-ring"></div><div id="spin-txt">Processing...</div></div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

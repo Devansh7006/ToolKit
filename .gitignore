@@ -1,0 +1,72 @@
+# ----------------------
+# Python
+# ----------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py[cod]
+*.so
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# Python build
+build/
+dist/
+*.egg-info/
+
+# ----------------------
+# FastAPI / Logs
+# ----------------------
+*.log
+logs/
+
+# ----------------------
+# OS Files
+# ----------------------
+.DS_Store
+Thumbs.db
+
+# ----------------------
+# IDE / Editor
+# ----------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ----------------------
+# Environment Variables
+# ----------------------
+.env
+
+# ----------------------
+# Node (if you upgrade frontend later)
+# ----------------------
+node_modules/
+
+# ----------------------
+# Temporary / Cache
+# ----------------------
+.cache/
+*.tmp
+
+# ----------------------
+# Scapy / Network dumps (if created later)
+# ----------------------
+*.pcap
+*.cap
+
+# ----------------------
+# Downloads (from your tool)
+# ----------------------
+*.zip
+*.exe
+*.bin
+*.jpg
+*.png
+*.pdf
