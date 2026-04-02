@@ -1,7 +1,11 @@
-
+```md
 # ⚡ Cyber Toolkit
 
-> A modular, GUI-based cybersecurity toolkit powered entirely by FastAPI.
+> A modular cybersecurity toolkit for network reconnaissance, featuring an integrated FastAPI-powered web interface.
+
+![Python](https://img.shields.io/badge/Python-3.9+-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ---
 
@@ -9,45 +13,108 @@
 
 Cyber Toolkit is a lightweight yet powerful security tool designed to perform essential reconnaissance tasks through a clean web-based interface.
 
-Unlike traditional setups, this project runs **fully on the backend** — FastAPI serves both the API and the frontend UI.
+Unlike traditional setups, this project runs **entirely on the backend** — FastAPI serves both the **API and the frontend UI**, eliminating the need for a separate frontend server.
 
-It combines multiple security utilities into a single dashboard, making it easy to scan networks, discover subdomains, enumerate directories, and download files — all from one place.
+It combines multiple security utilities into a single dashboard, making it easy to:
+- Scan networks
+- Discover subdomains
+- Enumerate directories
+- Download files
+
+—all from one place.
+
+---
+
+## 🧠 Architecture
+
+```
+
+Browser (UI)
+↓
+FastAPI Server (Backend)
+├── API Routes (/api/*)
+├── Static UI (served via /static)
+└── Modules
+├── ARP Scanner
+├── Subdomain Enum
+├── Directory Enum
+└── Downloader
+
+```
+
+✔ Single server  
+✔ No frontend deployment needed  
+✔ Real-time interaction via API  
 
 ---
 
 ## 🛠 Features
 
-- 🔍 **ARP Network Scanner**
-  - Discover active devices on a network
-  - Displays IP ↔ MAC mapping
+### 🔍 ARP Network Scanner
+- Discover active devices on a network
+- Displays IP ↔ MAC mapping
 
-- 🌐 **Subdomain Enumeration**
-  - Brute-force subdomains using wordlists
-  - Multi-threaded execution
+### 🌐 Subdomain Enumeration
+- Brute-force subdomains using wordlists
+- Multi-threaded for fast execution
 
-- 📂 **Directory Enumeration**
-  - Finds hidden endpoints on websites
-  - Detects `200 OK` and `403 Forbidden`
+### 📂 Directory Enumeration
+- Finds hidden endpoints on websites
+- Detects `200 OK` and `403 Forbidden`
 
-- ⬇️ **File Downloader**
-  - Download files directly from URLs
-  - Supports multiple file types
+### ⬇️ File Downloader
+- Download files directly from URLs
+- Supports multiple file types
 
-- 🎯 **Integrated Web UI**
-  - Served directly by FastAPI (`/`)
-  - No separate frontend server required
-  - Real-time interaction with backend APIs
+### 🎯 Integrated Web UI
+- Served directly via FastAPI (`/`)
+- No separate frontend server required
+- Clean, modern dashboard
 
 ---
 
 ## 🧠 Tech Stack
 
-| Layer       | Technology            |
-|------------|----------------------|
-| Backend    | FastAPI (Python)     |
-| UI Serving | FastAPI StaticFiles  |
-| Networking | Scapy                |
-| Requests   | Python Requests      |
+| Layer        | Technology |
+|-------------|-----------|
+| Backend     | FastAPI (Python) |
+| UI Serving  | FastAPI StaticFiles |
+| Networking  | Scapy |
+| Requests    | Python Requests |
+
+---
+
+## 📁 Project Structure
+
+```
+
+Cyber-toolkit/
+│
+├── backend/
+│   ├── main.py
+│   ├── requirements.txt
+│   ├── wordlist.txt
+│   │
+│   ├── modules/
+│   │   ├── arp.py
+│   │   ├── subdomain.py
+│   │   ├── dir_enum.py
+│   │   └── downloader.py
+│   │
+│   └── static/
+│       ├── index.html
+│       ├── style.css
+│       └── app.js
+│
+├── screenshots/
+│   ├── arp.png
+│   ├── Subdomain.png
+│   ├── Dir_Er.png
+│   └── download.png
+│
+└── README.md
+
+````
 
 ---
 
@@ -91,10 +158,12 @@ http://127.0.0.1:8000
 
 All endpoints are prefixed with `/api`
 
-* `/api/arp` → Network scan
-* `/api/subdomain` → Subdomain enumeration
-* `/api/dir` → Directory brute force
-* `/api/download` → File downloader
+| Endpoint         | Description           |
+| ---------------- | --------------------- |
+| `/api/arp`       | Network scan          |
+| `/api/subdomain` | Subdomain enumeration |
+| `/api/dir`       | Directory brute-force |
+| `/api/download`  | File downloader       |
 
 ---
 
@@ -102,15 +171,21 @@ All endpoints are prefixed with `/api`
 
 ### 🖥 ARP Network Scan
 
-![ARP](screenshots/arp.png)
+![ARP Scan](screenshots/arp.png)
+
+---
 
 ### 🌐 Subdomain Enumeration
 
 ![Subdomain](screenshots/Subdomain.png)
 
-### 📡 Directory Enumeration
+---
 
-![Directory](screenshots/Dir_En.png)
+### 📂 Directory Enumeration
+
+![Directory](screenshots/Dir_Er.png)
+
+---
 
 ### 📁 File Downloader
 
@@ -121,7 +196,8 @@ All endpoints are prefixed with `/api`
 ## 🔐 Disclaimer
 
 This tool is developed strictly for **educational and ethical purposes only**.
-Do not use it on networks or systems without proper authorization.
+
+Do **NOT** use it on networks or systems without proper authorization.
 
 ---
 
@@ -130,3 +206,4 @@ Do not use it on networks or systems without proper authorization.
 **Devansh Goyal**
 
 * GitHub: [https://github.com/Devansh7006](https://github.com/Devansh7006)
+
