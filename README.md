@@ -1,4 +1,3 @@
-
 ```md
 # ⚡ Cyber Toolkit
 
@@ -41,12 +40,12 @@ It combines multiple security utilities into a single dashboard, making it easy 
 
 ## 🧠 Tech Stack
 
-| Layer      | Technology |
-|-----------|------------|
-| Backend   | FastAPI (Python) |
-| Frontend  | HTML, CSS, JavaScript |
-| Networking| Scapy |
-| Requests  | Python Requests |
+| Layer       | Technology            |
+|------------|----------------------|
+| Backend    | FastAPI (Python)     |
+| Frontend   | HTML, CSS, JavaScript|
+| Networking | Scapy                |
+| Requests   | Python Requests      |
 
 ---
 
@@ -54,13 +53,12 @@ It combines multiple security utilities into a single dashboard, making it easy 
 
 ```
 
-Cyber-toolkit/
+ToolKit/
 │
 ├── backend/
 │   ├── main.py
 │   ├── requirements.txt
 │   ├── wordlist.txt
-│   │
 │   └── modules/
 │       ├── arp.py
 │       ├── subdomain.py
@@ -71,6 +69,12 @@ Cyber-toolkit/
 │   ├── index.html
 │   ├── style.css
 │   ├── app.js
+│
+├── screenshots/
+│   ├── arp.png
+│   ├── Subdomain.png
+│   ├── Dir_Er.png
+│   ├── download.png
 │
 └── README.md
 
@@ -138,29 +142,36 @@ http://localhost:5500
 
 ### 🖥 ARP Network Scan
 
-(screenshots/arp.png)
+![ARP Scan](screenshots/arp.png)
 
 ### 🌐 Subdomain Enumeration
 
-(screenshots/Subdomain.png)
+![Subdomain](screenshots/Subdomain.png)
 
 ### 📡 Directory Enumeration
 
-(screenshots/Dir_Er.png)
+![Directory](screenshots/Dir_Er.png)
 
 ### 📁 File Downloader
 
-(screenshots/download.png)
+![Downloader](screenshots/download.png)
 
-
+---
 
 ## 🔐 Disclaimer
 
 This tool is developed strictly for **educational and ethical purposes only**.
 Do not use it on networks or systems without proper authorization.
 
+---
+
 ## 👨‍💻 Author
 
 **Devansh Goyal**
 
 * GitHub: [https://github.com/Devansh7006](https://github.com/Devansh7006)
+
+```
+
+You're very close to a strong portfolio project.
+```
