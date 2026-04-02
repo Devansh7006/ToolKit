@@ -1,9 +1,9 @@
-```md
+
 # ⚡ Cyber Toolkit
 
 > A modular, GUI-based cybersecurity toolkit for network reconnaissance and analysis.
 
----
+
 
 ## 🚀 Overview
 
@@ -11,7 +11,7 @@ Cyber Toolkit is a lightweight yet powerful security tool designed to perform es
 
 It combines multiple security utilities into a single dashboard, making it easy to scan networks, discover subdomains, enumerate directories, and download files — all from one place.
 
----
+
 
 ## 🛠 Features
 
@@ -36,7 +36,7 @@ It combines multiple security utilities into a single dashboard, making it easy 
   - Tab-based navigation
   - Real-time results display
 
----
+
 
 ## 🧠 Tech Stack
 
@@ -47,7 +47,7 @@ It combines multiple security utilities into a single dashboard, making it easy 
 | Networking | Scapy                |
 | Requests   | Python Requests      |
 
----
+
 
 ## 📁 Project Structure
 
@@ -168,7 +168,4 @@ Do not use it on networks or systems without proper authorization.
 
 * GitHub: [https://github.com/Devansh7006](https://github.com/Devansh7006)
 
-```
-
-You're very close to a strong portfolio project.
 ```
