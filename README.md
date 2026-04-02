@@ -77,7 +77,7 @@ ToolKit/
 │
 └── README.md ``
 
----
+
 
 ## ⚙️ Installation & Setup
 
@@ -147,7 +147,7 @@ http://localhost:5500
 
 ### 📡 Directory Enumeration
 
-![Directory](screenshots/Dir_Er.png)
+![Directory](screenshots/Dir_En.png)
 
 ### 📁 File Downloader
 
