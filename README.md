@@ -50,7 +50,7 @@ It combines multiple security utilities into a single dashboard, making it easy 
 | Requests   | Python Requests      |
 
 ---
-
+```
 ## 📁 Project Structure
 
 
@@ -76,7 +76,7 @@ It combines multiple security utilities into a single dashboard, making it easy 
 ├── screenshots/
 │
 └── README.md``
-
+```
 ---
 
 ## ⚙️ Installation & Setup
