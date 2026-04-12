@@ -1,72 +1,184 @@
-# ----------------------
-# Python
-# ----------------------
+# ======================================================
+# 🔹 PYTHON
+# ======================================================
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
 *.py[cod]
+*$py.class
 *.so
+__pypackages__/
 
-# Virtual Environment
+# Distribution / packaging
+.Python
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# ======================================================
+# 🔹 VIRTUAL ENVIRONMENTS
+# ======================================================
 venv/
 env/
 ENV/
 .venv/
+.env.bak/
+.env.local/
 
-# Python build
-build/
-dist/
-*.egg-info/
-
-# ----------------------
-# FastAPI / Logs
-# ----------------------
+# ======================================================
+# 🔹 FASTAPI / BACKEND / LOGS
+# ======================================================
 *.log
 logs/
+uvicorn.log
+gunicorn.log
 
-# ----------------------
-# OS Files
-# ----------------------
-.DS_Store
-Thumbs.db
+# Database
+*.sqlite3
+*.db
 
-# ----------------------
-# IDE / Editor
-# ----------------------
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# ----------------------
-# Environment Variables
-# ----------------------
+# ======================================================
+# 🔹 ENVIRONMENT VARIABLES / SECRETS
+# ======================================================
 .env
+.env.*
+!.env.example
+!.env.local.example
 
-# ----------------------
-# Node (if you upgrade frontend later)
-# ----------------------
-node_modules/
+# API keys / secrets
+secrets.json
+*.pem
+*.key
+.envrc
 
-# ----------------------
-# Temporary / Cache
-# ----------------------
+# ======================================================
+# 🔹 CACHE / TEMP FILES
+# ======================================================
 .cache/
 *.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.pid
 
-# ----------------------
-# Scapy / Network dumps (if created later)
-# ----------------------
-*.pcap
-*.cap
+# Python cache tools
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
 
-# ----------------------
-# Downloads (from your tool)
-# ----------------------
+# ======================================================
+# 🔹 MACHINE LEARNING / AI PROJECTS
+# ======================================================
+# Model files
+*.h5
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Vector databases
+vectorstore/
+faiss_index/
+*.faiss
+*.pkl
+
+# Large datasets
+data/
+datasets/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# ======================================================
+# 🔹 FILE UPLOADS
+# ======================================================
+uploads/
+raw_uploads/
+processed/
+
 *.zip
 *.exe
 *.bin
 *.jpg
+*.jpeg
 *.png
 *.pdf
+
+# ======================================================
+# 🔹 NODE / FRONTEND
+# ======================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.next/
+out/
+
+# Coverage (JS + Python)
+coverage/
+
+# ======================================================
+# 🔹 IDE / EDITORS
+# ======================================================
+.vscode/
+.idea/
+*.code-workspace
+.history/
+
+# ======================================================
+# 🔹 OS FILES
+# ======================================================
+.DS_Store
+.DS_Store?
+Thumbs.db
+desktop.ini
+
+# ======================================================
+# 🔹 DOCKER
+# ======================================================
+docker-compose.override.yml
+
+# ======================================================
+# 🔹 TEST / COVERAGE
+# ======================================================
+htmlcov/
+.coverage
+.coverage.*
+nosetests.xml
+coverage.xml
+
+# ======================================================
+# 🔹 DOCUMENTATION BUILDS
+# ======================================================
+docs/_build/
+
+# ======================================================
+# 🔹 MISC
+# ======================================================
+*.log.*
+*.out
+*.err
+*.backup
+*.old
+
+# ======================================================
+# 🔹 KEEP FOLDER STRUCTURE
+# ======================================================
+!.gitkeep
